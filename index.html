@@ -38,7 +38,7 @@
         top: 50px;
         left: 50%;
         transform: translateX(-50%);
-        width: calc(80% - 20px); /* Adjusted for arrow width */
+        width: 80%;
         max-width: 400px;
         padding: 10px;
         font-size: 16px;
@@ -55,31 +55,31 @@
 
     .arrow-up {
         position: absolute;
-        top: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 5px solid lightblue;
+        top: 35px;
+        right: calc(50% - 15px); /* Adjust position */
+        font-size: 24px;
+        color: dodgerblue;
+        display: none;
     }
 </style>
 </head>
 <body>
 <button id="bypass-button" onclick="toggleTextInput()">Linkvertize Bypasser</button>
 <input type="text" id="text-input">
-<div class="arrow-up"></div>
+<div class="arrow-up">↑</div>
 <script>
     function toggleTextInput() {
         var button = document.getElementById("bypass-button");
         var textInput = document.getElementById("text-input");
+        var arrowUp = document.querySelector(".arrow-up");
         if (button.style.display === "none") {
             button.style.display = "block";
             textInput.style.display = "none";
+            arrowUp.style.display = "none"; // Hide the arrow when hiding the input
         } else {
             button.style.display = "none";
             textInput.style.display = "block";
+            arrowUp.style.display = "block"; // Show the arrow when showing the input
         }
     }
 </script>
