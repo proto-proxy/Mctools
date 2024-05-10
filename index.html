@@ -21,8 +21,9 @@
     
     #bypass-button {
         position: absolute;
-        bottom: 20px;
-        right: 20px;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         background-color: lightblue;
         color: black;
         padding: 10px 20px;
@@ -34,9 +35,9 @@
 
     #text-input {
         position: absolute;
-        bottom: 50%;
+        top: 50px;
         left: 50%;
-        transform: translate(-50%, 50%);
+        transform: translateX(-50%);
         width: 80%;
         max-width: 400px;
         padding: 10px;
@@ -45,6 +46,7 @@
         border: 1px solid lightblue;
         box-sizing: border-box;
         outline: none;
+        display: none;
     }
 
     #text-input:focus {
@@ -54,7 +56,7 @@
 </head>
 <body>
 <button id="bypass-button" onclick="toggleTextInput()">Linkvertize Bypasser</button>
-<input type="text" id="text-input" style="display:none;">
+<input type="text" id="text-input">
 <script>
     function toggleTextInput() {
         var button = document.getElementById("bypass-button");
@@ -70,4 +72,3 @@
 </script>
 </body>
 </html>
-
