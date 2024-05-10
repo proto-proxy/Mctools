@@ -38,7 +38,7 @@
         top: 50px;
         left: 50%;
         transform: translateX(-50%);
-        width: 80%;
+        width: calc(80% - 20px); /* Adjusted for arrow width */
         max-width: 400px;
         padding: 10px;
         font-size: 16px;
@@ -52,11 +52,24 @@
     #text-input:focus {
         border-color: dodgerblue;
     }
+
+    .arrow-up {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid lightblue;
+    }
 </style>
 </head>
 <body>
 <button id="bypass-button" onclick="toggleTextInput()">Linkvertize Bypasser</button>
 <input type="text" id="text-input">
+<div class="arrow-up"></div>
 <script>
     function toggleTextInput() {
         var button = document.getElementById("bypass-button");
