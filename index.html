@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>proto proxy website</title>
+<title>protos mc tools</title>
 <style>
     body {
         margin: 0;
@@ -52,38 +52,23 @@
     #text-input:focus {
         border-color: dodgerblue;
     }
-
-    .arrow-up {
-        position: absolute;
-        top: 35px;
-        right: calc(50% - 5px); /* Adjusted position */
-        font-size: 24px;
-        color: dodgerblue;
-        display: none;
-        border: 5px solid transparent; /* Added border */
-    }
 </style>
 </head>
 <body>
 <button id="bypass-button" onclick="toggleTextInput()">Linkvertize Bypasser</button>
 <input type="text" id="text-input">
-<div class="arrow-up">↑</div>
 <script>
     function toggleTextInput() {
         var button = document.getElementById("bypass-button");
         var textInput = document.getElementById("text-input");
-        var arrowUp = document.querySelector(".arrow-up");
         if (button.style.display === "none") {
             button.style.display = "block";
             textInput.style.display = "none";
-            arrowUp.style.display = "none"; // Hide the arrow when hiding the input
         } else {
             button.style.display = "none";
             textInput.style.display = "block";
-            arrowUp.style.display = "block"; // Show the arrow when showing the input
         }
     }
 </script>
 </body>
 </html>
-
