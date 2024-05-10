@@ -31,9 +31,43 @@
         border: none;
         cursor: pointer;
     }
+
+    #text-input {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: 80%;
+        max-width: 400px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 1px solid lightblue;
+        box-sizing: border-box;
+        outline: none;
+    }
+
+    #text-input:focus {
+        border-color: dodgerblue;
+    }
 </style>
 </head>
 <body>
-<button id="bypass-button">Linkvertize Bypasser</button>
+<button id="bypass-button" onclick="toggleTextInput()">Linkvertize Bypasser</button>
+<input type="text" id="text-input" style="display:none;">
+<script>
+    function toggleTextInput() {
+        var button = document.getElementById("bypass-button");
+        var textInput = document.getElementById("text-input");
+        if (button.style.display === "none") {
+            button.style.display = "block";
+            textInput.style.display = "none";
+        } else {
+            button.style.display = "none";
+            textInput.style.display = "block";
+        }
+    }
+</script>
 </body>
 </html>
+
