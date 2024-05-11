@@ -19,10 +19,11 @@
         background-repeat: no-repeat; /* Do not repeat the background image */
     }
     
-    #bypass-button {
+    #bypass-button,
+    #zip-button,
+    #bottom-middle-button {
         position: absolute;
         bottom: 20px;
-        right: 1%;
         transform: translateX(-50%);
         background-color: lightblue;
         color: black;
@@ -33,18 +34,16 @@
         cursor: pointer;
     }
 
+    #bypass-button {
+        left: 25%;
+    }
+
     #zip-button {
-        position: absolute;
-        bottom: 20px;
-        right: 70%;
-        transform: translateX(-50%);
-        background-color: lightblue;
-        color: black;
-        padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 20px;
-        border: none;
-        cursor: pointer;
+        left: 75%;
+    }
+
+    #bottom-middle-button {
+        left: 50%;
     }
 
     #text-input {
@@ -75,6 +74,7 @@
 <body>
 <button id="bypass-button" onclick="toggleTextInput()">Linkvertize Bypasser</button>
 <button id="zip-button" onclick="openFileExplorer()">Zip to Mcpack</button>
+<button id="bottom-middle-button">Another Button</button> <!-- No onclick function -->
 <input type="text" id="text-input">
 <input type="file" id="file-input" style="display: none;" onchange="handleFileSelection(event)">
 <script>
