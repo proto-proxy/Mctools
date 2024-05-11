@@ -101,10 +101,15 @@
     function handleFileSelection(event) {
         var selectedFile = event.target.files[0];
         if (selectedFile) {
-            var filePath = "Q:\\users\\usermgr0\\downloads\\" + selectedFile.name;
-            // Now you have the file path, you can perform further actions with it
-            console.log("Selected file path:", filePath);
-            // You can also trigger file download or any other desired action here
+            var fileName = selectedFile.name.split('.')[0]; // Remove the extension
+            var newFileName = fileName + ".mcpack";
+            var blob = new Blob([selectedFile], { type: "application/octet-stream" });
+            var link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = newFileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     }
 </script>
