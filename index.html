@@ -33,6 +33,20 @@
         cursor: pointer;
     }
 
+    #zip-button {
+        position: absolute;
+        bottom: 20px;
+        left: 1%;
+        transform: translateX(-50%);
+        background-color: lightblue;
+        color: black;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+    }
+
     #text-input {
         position: absolute;
         top: 50px;
@@ -56,16 +70,20 @@
 </head>
 <body>
 <button id="bypass-button" onclick="toggleTextInput()">Linkvertize Bypasser</button>
+<button id="zip-button" onclick="toggleTextInput()">Zip to Mcpack</button>
 <input type="text" id="text-input">
 <script>
     function toggleTextInput() {
         var button = document.getElementById("bypass-button");
+        var zipButton = document.getElementById("zip-button");
         var textInput = document.getElementById("text-input");
         if (button.style.display === "none") {
             button.style.display = "block";
+            zipButton.style.display = "block";
             textInput.style.display = "none";
         } else {
             button.style.display = "none";
+            zipButton.style.display = "none";
             textInput.style.display = "block";
         }
     }
