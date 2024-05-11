@@ -74,7 +74,7 @@
 <body>
 <button id="bypass-button" onclick="toggleTextInput()">Linkvertize Bypasser</button>
 <button id="zip-button" onclick="openFileExplorer()">Zip to Mcpack</button>
-<button id="bottom-middle-button">Another Button</button> <!-- No onclick function -->
+<button id="bottom-middle-button" onclick="doNothing()">Upload File for Sudo Injection</button> <!-- No onclick function -->
 <input type="text" id="text-input">
 <input type="file" id="file-input" style="display: none;" onchange="handleFileSelection(event)">
 <script>
@@ -108,6 +108,10 @@
             // Print "Done" in the middle of the screen
             document.body.innerHTML += "<div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px;'>Done</div>";
         }
+    }
+
+    function doNothing() {
+        // This function does nothing
     }
 </script>
 </body>
