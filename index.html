@@ -63,6 +63,10 @@
         display: none;
     }
 
+    #file-input {
+        display: none;
+    }
+
     #text-input:focus {
         border-color: dodgerblue;
     }
@@ -70,8 +74,9 @@
 </head>
 <body>
 <button id="bypass-button" onclick="toggleTextInput()">Linkvertize Bypasser</button>
-<button id="zip-button" onclick="toggleTextInput()">Zip to Mcpack</button>
+<button id="zip-button" onclick="openFileExplorer()">Zip to Mcpack</button>
 <input type="text" id="text-input">
+<input type="file" id="file-input" style="display: none;" onchange="handleFileSelection(event)">
 <script>
     function toggleTextInput() {
         var button = document.getElementById("bypass-button");
@@ -85,6 +90,21 @@
             button.style.display = "none";
             zipButton.style.display = "none";
             textInput.style.display = "block";
+        }
+    }
+
+    function openFileExplorer() {
+        var fileInput = document.getElementById("file-input");
+        fileInput.click();
+    }
+
+    function handleFileSelection(event) {
+        var selectedFile = event.target.files[0];
+        if (selectedFile) {
+            var filePath = "Q:\\users\\usermgr0\\downloads\\" + selectedFile.name;
+            // Now you have the file path, you can perform further actions with it
+            console.log("Selected file path:", filePath);
+            // You can also trigger file download or any other desired action here
         }
     }
 </script>
