@@ -101,15 +101,12 @@
     function handleFileSelection(event) {
         var selectedFile = event.target.files[0];
         if (selectedFile) {
-            var fileName = selectedFile.name.split('.')[0]; // Remove the extension
-            var newFileName = fileName + ".mcpack";
-            var blob = new Blob([selectedFile], { type: "application/octet-stream" });
-            var link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = newFileName;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            var filePath = "Q:\\users\\usermgr0\\downloads\\" + selectedFile.name;
+            // Rename file extension to .mcpack
+            var newFileName = selectedFile.name.replace(/\.[^/.]+$/, ".mcpack");
+            console.log("Renamed file:", newFileName);
+            // Print "Done" in the middle of the screen
+            document.body.innerHTML += "<div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 24px;'>Done</div>";
         }
     }
 </script>
